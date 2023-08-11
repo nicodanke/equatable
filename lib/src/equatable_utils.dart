@@ -20,7 +20,7 @@ bool equals(List? list1, List? list2) {
 
     if (_isEquatable(unit1) && _isEquatable(unit2)) {
       if (unit1 != unit2) return false;
-    } else if (unit1 is Iterable || unit1 is Map) {
+    } else if (unit1 is Iterable || unit1 is Map || unit1 is Record) {
       if (!_equality.equals(unit1, unit2)) return false;
     } else if (unit1?.runtimeType != unit2?.runtimeType) {
       return false;
